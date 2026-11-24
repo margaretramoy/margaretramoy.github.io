@@ -1,13 +1,437 @@
-#title {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: blue;
+/* =========================================================
+   style.css — shared by every page of the website
+   ========================================================= */
+
+/* Fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap");
+
+/* ----- Colors ----- */
+:root {
+  /* Your color scheme */
+  --blue-gray: #7191AA;     /* header, menu + bottom bar */
+  --beige: #E2D5C8;         /* page background */
+  --taupe: #BEAFA3;         /* thin lines and borders */
+  --box: #B9CBD8;           /* boxes around photos, quotes + captions */
+
+  /* Darker blues so text is easy to read */
+  --ink: #2E3E4E;           /* main text + headings */
+  --link: #4F6F88;          /* links + names under quotes */
+
+  --card-bg: #fbf8f4;       /* off-white text boxes */
+  --white-box: #ffffff;     /* boxes behind quotes + captions */
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--beige);
+  color: var(--ink);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;        /* keeps the bottom bar at the bottom of the screen */
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--link);
+  font-weight: 600;         /* links are bold blue instead of underlined */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-gray);
+}
+
+/* ----- Menu bar ----- */
 .navbar {
-    text-align: right;
-    padding: 10px 40px 0 0;
+  background-color: var(--blue-gray);
+  padding: 14px 24px;
+  position: sticky;         /* stays at the top when you scroll */
+  top: 0;
+  z-index: 10;
 }
 
 .navbar ul {
-    list-style: none;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;  /* links on the right */
+  gap: 6px 28px;
+}
+
+.navbar a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--beige);
+  border-bottom-color: var(--beige);
+}
+
+/* ----- Header (name + school) ----- */
+.header {
+  background-color: var(--blue-gray);
+  color: #ffffff;
+  padding: 60px 24px 70px;
+  text-align: center;
+  border-bottom: 4px solid var(--taupe);
+}
+
+#title {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+/* ----- Page layout ----- */
+.page {
+  max-width: 1100px;
+  width: 100%;
+  margin: -36px auto 0;     /* pulls the boxes up over the header */
+  padding: 0 24px 50px;
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.main-content {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(46, 62, 78, 0.10);
+  padding: 32px;
+  flex: 2.4;
+  min-width: 0;
+  overflow: hidden;         /* keeps floated pictures inside the box */
+}
+
+.page.single {
+  justify-content: center;
+}
+
+.page.single .main-content {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ----- Headings & paragraphs ----- */
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+h2::after {                 /* small line under each heading */
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: 6px;
+  background-color: var(--taupe);
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+/* ----- Quotes ----- */
+.quote {
+  margin: 22px 0 0;
+  padding: 14px 16px;
+  text-align: left;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.55;
+  background-color: var(--white-box);
+  border-left: 4px solid var(--taupe);
+  border-radius: 0 8px 8px 0;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--link);
+}
+
+/* =========================================================
+   ABOUT ME PAGE (index.html)
+   ========================================================= */
+.about-page {
+  max-width: 1200px;
+}
+
+.about-page .main-content {
+  flex: 1;
+  padding: 40px 48px;
+}
+
+.about-page .main-content p {
+  font-size: 19px;          /* sized so the text lines up with the bottom of your picture box */
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+/* Links inside the About Me text look exactly like the rest of the text */
+.about-page .main-content p a {
+  color: inherit;
+  font-weight: inherit;
+}
+
+.about-page .main-content p a:hover {
+  color: var(--blue-gray);
+}
+
+/* Your picture + quote 1: float on the right so the text wraps beside AND under it */
+.about-side {
+  float: right;
+  width: 40%;
+  margin: 0 0 24px 40px;
+  padding: 18px;
+  background-color: var(--box);
+  border-radius: 12px;
+}
+
+.headshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.about-side .quote {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+/* Two photos side by side (Philippines) */
+.photo-pair {
+  clear: both;              /* starts below your picture box */
+  margin: 8px 0 28px;
+  padding: 18px;
+  background-color: var(--box);
+  border-radius: 12px;
+}
+
+.photo-row {
+  display: flex;
+  gap: 14px;
+}
+
+.photo-row img {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  display: block;
+  border-radius: 8px;
+}
+
+/* flex = each photo's width / height, so both come out the SAME height with no cropping */
+.photo-row img.tall { flex: 0.869; }
+.photo-row img.wide { flex: 1.333; }
+
+.photo-pair figcaption {
+  margin-top: 14px;
+  padding: 10px 16px;
+  background-color: var(--white-box);
+  border-left: 4px solid var(--taupe);
+  border-radius: 0 8px 8px 0;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink);
+}
+
+/* Quote 2: wide quote at the bottom of the page */
+.bottom-quote {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px 50px;
+}
+
+.bottom-quote .quote-band {
+  background-color: var(--box);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.bottom-quote blockquote {
+  margin: 0;
+  padding: 36px 40px;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;         /* not bold */
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: var(--white-box);
+  border-radius: 8px;
+  border-left: 4px solid var(--taupe);
+}
+
+.bottom-quote .quote-author {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+/* =========================================================
+   RESUME PAGE (resume.html)
+   ========================================================= */
+.resume-card {
+  padding: 16px;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 85vh;             /* 85% of the screen height; scroll inside it */
+  border: 1px solid var(--beige);
+  border-radius: 8px;
+  display: block;
+}
+
+.resume-link {
+  text-align: center;
+  margin: 14px 0 4px;
+  font-size: 15px;
+}
+
+/* =========================================================
+   RESEARCH STATEMENT PAGE (research.html)
+   ========================================================= */
+.research-wrap {
+  max-width: 1100px;
+  width: 100%;
+  margin: -36px auto 0;     /* pulls the boxes up over the header */
+  padding: 0 24px 50px;
+}
+
+/* Top: quote across the page with the picture next to it */
+.research-top {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+  margin-bottom: 28px;
+  background-color: var(--box);
+  border-radius: 12px;
+}
+
+.research-top .quote {
+  flex: 1.3;
+  margin: 0;
+  padding: 24px 28px;
+  display: flex;            /* centers the quote top-to-bottom */
+  flex-direction: column;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.research-top .quote .quote-author {
+  font-size: 14px;
+}
+
+.research-top img {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.research-wrap .main-content {
+  overflow: visible;
+}
+
+/* ----- Bottom bar (no text) ----- */
+.footer {
+  margin-top: auto;         /* pushes the bar to the bottom */
+  height: 56px;
+  background-color: var(--blue-gray);
+  border-top: 4px solid var(--taupe);
+}
+
+/* =========================================================
+   PHONES & SMALL SCREENS
+   ========================================================= */
+@media (max-width: 760px) {
+  .navbar ul {
+    justify-content: center;
+  }
+  .navbar a {
+    font-size: 14px;
+  }
+  #title {
+    font-size: 38px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .page {
+    flex-direction: column;
+  }
+  .main-content {
+    padding: 22px;
+  }
+  .about-page .main-content {
+    padding: 24px 22px;
+  }
+  .about-page .main-content p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  .about-side {
+    float: none;
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 12px;
+  }
+  .photo-pair {
+    padding: 12px;
+  }
+  .photo-row {
+    flex-direction: column;   /* stack the two photos */
+  }
+  .bottom-quote .quote-band {
+    padding: 12px;
+  }
+  .bottom-quote blockquote {
+    padding: 22px 18px;
+    font-size: 20px;
+  }
+  .research-top {
+    flex-direction: column;   /* picture goes under the quote */
+    padding: 12px;
+  }
+  .research-top .quote {
+    padding: 18px;
+    font-size: 18px;
+  }
 }

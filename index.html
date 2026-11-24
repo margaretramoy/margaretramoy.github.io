@@ -1,17 +1,146 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Margaret Ramoy</title>
-            </head>
-        <body>
-            <a href="index.html">About Me</a>
-            <a href="resume.html">Resume</a>
-            <a href="https://www.linkedin.com/in/margaretramoy/">LinkedIn</a>
-            <h1>Margaret Ramoy<hm1>
-                <p>University of North Carolina at Chapel Hill</p>
-                <p>Hi, my name is Margaret.</p>
-            </hm1></h1>
-        </body>
-        <img src="assets/headshot.jpg"
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margaret Ramoy | About Me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR (same on every page) ===== -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html" class="active">About Me</a></li>
+      <li><a href="resume.pdf">Resume</a></li>
+      <li><a href="researchstatement.html">Research Statement</a></li>
+      <!-- Paste your LinkedIn link below. target="_blank" opens it in a new tab. -->
+      <li><a href="https://www.linkedin.com/in/margaretramoy" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <h1 id="title">Margaret Ramoy</h1>
+    <p class="subtitle">University of North Carolina at Chapel Hill</p>
+  </header>
+
+  <div class="page about-page">
+
+    <!-- About Me: one box with your text, your picture, and quote 1 -->
+    <main class="main-content">
+      <h2>About Me</h2>
+
+      <!-- PICTURE OF ME + QUOTE 1: floats on the right; the text wraps beside and under it -->
+      <aside class="about-side">
+        <!-- PICTURE 1: a picture of you -->
+        <img class="headshot" src="assets/margaret-ramoy.jpg" alt="Margaret Ramoy smiling outdoors in a white dress">
+
+        <!-- QUOTE 1 -->
+        <blockquote class="quote">
+          &ldquo;You cannot hope to build a better world without improving the individuals.
+          To that end, each of us must work for his own improvement, and at the same time
+          share a general responsibility for all humanity, our particular duty being to aid
+          those to whom we think we can be most useful.&rdquo;
+          <span class="quote-author">&mdash; Marie Curie</span>
+        </blockquote>
+      </aside>
+
+      <!-- ABOUT ME TEXT. Each paragraph goes in its own <p> </p>. -->
+      <p>
+        At just six years old, I understood the gap between my family in the United States and
+        the relatives I had living in the Philippines. I helped my dad pack boxes of clothes, while
+        he ensured the medications his parents needed were included, before we shipped everything
+        to my grandparents in the Philippines. Because of this, even before I could truly
+        understand the disparity, I knew my grandparents depended on our support to survive,
+        relying on us to send them medicine they could not get on their own.
+      </p>
+      <p>
+        As I became older, I learned that my parents also sent a significant portion of our income
+        to our family in the Philippines to cover basic necessities like food and housing.
+        Consequently, when I finally visited, I was confronted by the disparities my family had been
+        working to ease in person for the first time. Simply, what someone can afford and what
+        resources are nearby dictate whether they can receive adequate medical care. As such,
+        watching my parents make these sacrifices has made healthcare access personal to me. It is
+        the catalyst that inspires me to become a physician who advocates for patients and
+        communities facing these barriers.
+      </p>
+
+      <!--
+        PHOTOS FROM THE PHILIPPINES: two pictures side by side with a caption.
+        On phones they stack on top of each other.
+      -->
+      <figure class="photo-pair">
+        <div class="photo-row">
+          <img class="tall" src="assets/family-philippines.jpg" alt="Margaret with her cousins and great-grandmother inside her cousin's home in the Philippines">
+          <img class="wide" src="assets/neighborhood-philippines.jpg" alt="The neighborhood outside her cousin's home: a narrow dirt road lined with makeshift houses, tangled power lines, and piles of debris">
+        </div>
+        <figcaption>My cousin&rsquo;s home in the Philippines and the neighborhood just outside it.</figcaption>
+      </figure>
+
+      <p>
+        Consequently, I immersed myself in advocacy in high school. I was selected to attend the
+        <a href="https://www.unwomen.org/en/csw" target="_blank">70th Commission on the Status of Women</a>
+        at United Nations Headquarters, where I engaged with Member States, UN entities, and
+        accredited NGOs on issues affecting women and girls worldwide. As a result, I witnessed how
+        policy decisions were shaped by people who did not experience their effects.
+      </p>
+      <p>
+        Furthermore, I orchestrated a statewide conference for students of Asian descent that served
+        more than 500 students. I worked on sponsor outreach and campaign development, resultantly
+        raising around $20,000, which funded youth education and enrichment in under-resourced
+        Baltimore communities. Through this process, I learned the importance of creating
+        environments where people have the opportunity to share their experiences and see
+        themselves represented. As such, I want to be a physician who creates that same environment
+        for patients, taking the time to learn where they come from so they feel comfortable
+        explaining what they need.
+      </p>
+      <p>
+        Thus, these experiences have demonstrated that improving healthcare access requires
+        understanding both the people affected and the systems that serve them. For this reason, I
+        plan to apply to the
+        <a href="https://sph.unc.edu" target="_blank">Gillings School of Global Public Health</a>
+        to major in Community and Global Public Health, giving me the opportunity to study how
+        factors like cost and location shape a community's health and how those barriers can be
+        addressed on a larger scale.
+      </p>
+      <p>
+        Additionally, I intend to do research on health disparities in communities with limited
+        access to care. Through this research, I will learn how to collect and analyze data on how
+        factors like income and location affect people's health. In turn, I want to use evidence to
+        help design treatments and interventions that make care easier to reach for the communities
+        that need it most.
+      </p>
+      <p>
+        Furthermore, in the summer of 2027, I will work as a medical assistant at SCS Physicians in
+        Timonium, Maryland, where I will scribe for providers and explain results and treatment
+        plans to patients. Through working as an MA, I will engage directly with patients and
+        practice listening without assumptions or bias, a skill I will bring to my future patients.
+        Accordingly, understanding a patient&rsquo;s culture and beliefs will allow me to build
+        trust with my patients and create treatment plans that fit their lives.
+      </p>
+      <p>
+        Ultimately, my goal is to become a physician who serves underserved communities, treating
+        patients while also working to fix the reasons they struggled to get care in the first
+        place. With this foundation, I hope to help develop programs and treatments that make care
+        more affordable and easier to reach for communities that have gone without it.
+      </p>
+    </main>
+  </div>
+
+  <!-- QUOTE 2: at the bottom of the page -->
+  <section class="bottom-quote">
+    <div class="quote-band">
+      <blockquote>
+        &ldquo;Life is not easy for any of us. But what of that? We must have perseverance and
+        above all confidence in ourselves. We must believe that we are gifted for something,
+        and that this thing, at whatever cost, must be attained.&rdquo;
+        <span class="quote-author">&mdash; Marie Curie</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Bottom bar (no text) -->
+  <footer class="footer"></footer>
+
+</body>
 </html>
