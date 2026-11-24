@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margaret Ramoy | Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">About Me</a></li>
+      <li><a href="resume.html" class="active">Resume</a></li>
+      <li><a href="research.html">Research Statement</a></li>
+      <li><a href="https://www.linkedin.com/in/margaretramoy" target="_blank">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <h1 id="title">Resume</h1>
+  </header>
+
+  <div class="page single resume-page">
+    <main class="main-content resume-card">
+      <!--
+        YOUR RESUME: the PDF must be saved as assets/resume.pdf
+        The box below shows it with the browser's PDF viewer, so visitors can scroll,
+        zoom, download, and print it.
+      -->
+      <object class="resume-frame" data="assets/resume.pdf#navpanes=0&view=FitH" type="application/pdf">
+        <!-- Shown only if the browser can't display PDFs inside a page (some phones) -->
+        <p class="resume-fallback">
+          Your browser can't show the resume here.
+          <a href="assets/resume.pdf" target="_blank">Click here to open it.</a>
+        </p>
+      </object>
+
+      <!-- Backup link -->
+      <p class="resume-link"><a href="assets/resume.pdf" target="_blank">Open resume in a new tab</a></p>
+    </main>
+  </div>
+
+  <!-- Bottom bar (no text) -->
+  <footer class="footer"></footer>
+
+</body>
+</html>
